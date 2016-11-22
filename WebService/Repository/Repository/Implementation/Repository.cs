@@ -8,15 +8,16 @@ using Data.Model;
 
 namespace BaseRepository.Repository.Implementation
 {
-    public class Repository :BaseRepository, IRepository
+    public class Repository : BaseRepository, IRepository
     {
-       public DMLResult CreateOrder(int Client_Id, int Table_Number, int ProductsList_Id)
+        public DMLResult CreateOrder(int Client_Id, int Table_Number, int ProductsList_Id)
         {
             return SimpleDML("Order_AddOrder",
-                new {
+                new
+                {
                     clientId = Client_Id,
                     tableNumber = Table_Number,
-                    productsListId = ProductsList_Id                    
+                    productsListId = ProductsList_Id
                 });
         }
     }
